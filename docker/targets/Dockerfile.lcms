@@ -44,9 +44,6 @@ RUN mkdir -p /fuzz /corpus /seeds && \
         -std=c++14 \
         -I include/ src/.libs/liblcms2.a \
         -o /fuzz/cms_transform_fuzzer && \
-    # Single meaningful ICC seed (real IBM ThinkPad T61 display profile shipped
-    # by Little-CMS). Baked in so the image is self-contained; can still be
-    # overridden by mounting docker/seeds/lcms/ at runtime.
     cp /src/Little-CMS/testbed/ibm-t61.icc /seeds/seed.icc
 
 ENV DURATION=86400
